@@ -1,11 +1,17 @@
 import logo from '../assets/logo.png';
-import { PanelControls } from '@widgets/index';
+import React from 'react';
 
-export const Header = () => {
+type HeaderProps = {
+	className?: string;
+	children?: React.ReactNode;
+};
+
+export const Header: React.FC<HeaderProps> = ({ children, className }) => {
 	return (
 		<header
 			className={
-				'relative flex h-[200px] items-center justify-center bg-white'
+				'flex h-[200px] items-center justify-center bg-white ' +
+				(className || '')
 			}
 		>
 			<img
@@ -13,7 +19,7 @@ export const Header = () => {
 				alt={'logo'}
 				className={'max-h-[120px] max-w-[120px]'}
 			/>
-			<PanelControls />
+			{children}
 		</header>
 	);
 };
