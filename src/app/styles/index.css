@@ -3,7 +3,7 @@
 
 @layer base {
     html, body {
-        font-family: "Nunino", sans-serif;
+        font-family: "Nunito", sans-serif;
         min-width: 320px;
     }
 
