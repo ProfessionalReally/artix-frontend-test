@@ -1,15 +1,16 @@
-import { MAX_PERSENTAGE, MIN_PERSENTAGE } from '@shared/constants';
+import { MAX_PROGRESS, MIN_PROGRESS } from '@shared/constants';
 
 export const calculateProgress = (
 	now: number,
 	countdown: number,
 	createdAt: number,
 ) => {
-	const elapsed = (now - createdAt) / 1000;
-	const remaining = countdown - elapsed;
-	const percent = Math.max(
-		MIN_PERSENTAGE,
-		Math.min((remaining / countdown) * MAX_PERSENTAGE, MAX_PERSENTAGE),
+	const elapsed = Math.max(0, (now - createdAt) / 1000);
+	const remaining = Math.max(0, countdown - elapsed);
+	const progress = Math.min(
+		Math.max(remaining / countdown, MIN_PROGRESS),
+		MAX_PROGRESS,
 	);
-	return { remaining, percent };
+
+	return { remaining, progress };
 };

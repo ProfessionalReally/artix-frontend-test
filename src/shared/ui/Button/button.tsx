@@ -1,13 +1,13 @@
-import React from 'react';
+import type { FC, ReactNode } from 'react';
 
 type ButtonProps = {
 	type?: 'button' | 'submit' | 'reset';
 	disabled?: boolean;
 	className?: string;
-	children: React.ReactNode;
+	children: ReactNode;
 	onClick?: () => void;
 };
-export const Button: React.FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
 	type = 'button',
 	disabled = false,
 	className = '',

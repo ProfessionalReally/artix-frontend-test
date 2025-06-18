@@ -1,7 +1,8 @@
 import { Header, PanelControls } from '@widgets/index';
 import { CardList } from '@widgets/index';
 import { useCards } from '@features/index';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
+import type { FormEvent } from 'react';
 
 export const HomePage = () => {
 	const [paramsSubmitted, setParamsSubmitted] = useState({
@@ -14,7 +15,7 @@ export const HomePage = () => {
 		paramsSubmitted.interval,
 	);
 
-	const onSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+	const onSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const { count, interval } = e.currentTarget;
 		setParamsSubmitted({

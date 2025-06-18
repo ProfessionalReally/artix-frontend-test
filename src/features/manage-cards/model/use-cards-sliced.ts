@@ -10,7 +10,7 @@ export const generateNewCards = (count: number) => {
 		id: crypto.randomUUID(),
 		bgColor: generateRandomColor(),
 		countdown: generateRandomCountdown(),
-		createdAt: Date.now(),
+		createdAt: Date.now() + 200,
 	}));
 };
 

@@ -1,19 +1,22 @@
-import React from 'react';
+import type { FC } from 'react';
 
 type ProgressBarProps = {
 	className?: string;
-	percent: number;
+	progress: number;
 };
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
+export const ProgressBar: FC<ProgressBarProps> = ({
 	className = '',
-	percent,
+	progress,
 }) => {
 	return (
 		<div className={'h-1 w-full bg-white ' + (className || '')}>
 			<div
-				className='linear h-full bg-blue-600 transition-all duration-200'
-				style={{ width: `${percent}%` }}
+				className='linear h-full origin-left bg-blue-600 transition-transform duration-200'
+				style={{
+					transform: `scaleX(${progress})`,
+					willChange: 'transform',
+				}}
 			/>
 		</div>
 	);

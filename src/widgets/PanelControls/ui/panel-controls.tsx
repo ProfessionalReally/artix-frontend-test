@@ -1,18 +1,19 @@
 import { Button, TextField } from '@shared/ui';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { MAX_CARDS } from '@shared/constants';
+import type { ChangeEvent, FC, FormEvent } from 'react';
 
 type PanelControlsProps = {
-	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+	onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
-export const PanelControls: React.FC<PanelControlsProps> = ({ onSubmit }) => {
+export const PanelControls: FC<PanelControlsProps> = ({ onSubmit }) => {
 	const [params, setParams] = useState<{ count: number; interval: number }>({
 		count: 0,
 		interval: 0,
 	});
 
-	const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+	const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
 		setParams((prev) => ({ ...prev, [name]: Number(value) || 0 }));
 	}, []);

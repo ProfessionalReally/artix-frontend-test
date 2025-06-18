@@ -1,8 +1,8 @@
-import React from 'react';
+import type { ChangeEvent, FC } from 'react';
 
 type TextFieldProps = {
 	value: string;
-	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 	name: string;
 	id: string;
 	type?: 'text' | 'password' | 'email' | 'number';
@@ -13,7 +13,7 @@ type TextFieldProps = {
 	disabled?: boolean;
 };
 
-export const TextField: React.FC<TextFieldProps> = ({
+export const TextField: FC<TextFieldProps> = ({
 	name,
 	id,
 	label = '',

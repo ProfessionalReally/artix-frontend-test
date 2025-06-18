@@ -1,3 +1,3 @@
 export const generateRandomCountdown = () => {
-	return Math.floor(Math.random() * (10 - 1)) + 1;
+	return Math.floor(Math.random() * (10 - 1)) + 2;
 };

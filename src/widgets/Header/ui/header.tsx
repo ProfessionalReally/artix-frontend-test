@@ -1,12 +1,12 @@
 import logo from '../assets/logo.png';
-import React from 'react';
+import type { FC, ReactNode } from 'react';
 
 type HeaderProps = {
 	className?: string;
-	children?: React.ReactNode;
+	children?: ReactNode;
 };
 
-export const Header: React.FC<HeaderProps> = ({ children, className }) => {
+export const Header: FC<HeaderProps> = ({ children, className }) => {
 	return (
 		<header
 			className={
