@@ -31,6 +31,7 @@ If more than `countdown` seconds have passed since the card was mounted, it disa
 resets its `countdown` to a new random value.
 
 ## 📸 Screenshots
+![screenshot-app-1](https://github.com/user-attachments/assets/182fe210-ee6d-4b44-941a-e8a1ad8f3130)
 
 ## 🚀 Technologies and Tools
 
